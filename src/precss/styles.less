@@ -17,9 +17,11 @@ body{
 
 body{
 	font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
+	margin: 0 auto;
+	max-width: 1920px;
 	font-size: 16px;
 	font-weight: @fontNormal;
-	line-height: 1.2;
+	line-height: 1.5;
 }
 
 .btn-reset{
@@ -67,6 +69,7 @@ video{
 a{
 	text-decoration: none;
 }
+
 
 /* Atomic */
 
@@ -127,4 +130,54 @@ a{
 	overflow: hidden;
 }
 
-/* General */
+/* General HEADER */
+
+.main-header {
+	padding-top: 45px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.main-navigation {
+	display: flex;
+	align-items: baseline;
+
+	&__links {
+		display: flex;
+		align-items: baseline;
+
+		&-tels {
+			margin-left: 55px;
+		}
+	}
+
+	&__item {
+
+		& + & {
+			margin-left: 20px;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 0;
+			border-bottom: 1px solid @colorGreenLight;
+		}
+
+		&:hover::after {
+			width: 100%;
+			transition: width @transT;
+		}
+	}
+
+	&__link {
+		color: #000000;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: @fontNormal;
+		font-size: 14px;
+		line-height: 17px;
+	}
+	
+}
