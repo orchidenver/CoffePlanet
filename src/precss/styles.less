@@ -134,9 +134,14 @@ a{
 
 .main-header {
 	padding-top: 45px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	position: relative;
+	width: 100%;
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 .main-navigation {
@@ -148,6 +153,7 @@ a{
 		align-items: baseline;
 
 		&-tels {
+			padding: 0;
 			margin-left: 55px;
 		}
 	}
@@ -178,6 +184,64 @@ a{
 		font-weight: @fontNormal;
 		font-size: 14px;
 		line-height: 17px;
+	}	
+}
+
+/* General BANNER */
+
+.banner {
+	margin-top: -80px;
+	padding-top: 165px;
+	padding-bottom: 270px;
+	background-image: url(../img/first-screen-bg.jpg);
+	background-size: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	&__text {
+		font-size: 90px;
+		line-height: 110px;
+		.size(7);
+		margin: 0;
+		margin-bottom: 55px;
 	}
-	
+
+	&__btn {
+		.btn-reset();
+		height: 56px;
+		font-weight: @fontSBold;
+		padding: 0 55px;
+		border-radius: 50px;
+		vertical-align: bottom;
+
+		&_colored {
+			background-color: @colorGreenDeep;
+			box-shadow: 0px 7px 21px rgba(55, 125, 60, 0.3);
+			color: #fff;
+			transition: @transT;
+
+			&:focus {
+				box-shadow: 0 0 0 2px #304431, 0 0 3px 5px #5B815D;
+			}
+
+			&:hover, &:active {
+				background-color: @colorGreenLight;
+			}
+		}
+
+		&_trans {
+			margin-left: 20px;
+			border: 2px solid @colorGreenLight;
+			transition: @transT;
+
+			&:focus {
+				box-shadow: 0 0 0 2px #304431, 0 0 3px 5px #5B815D;
+			}
+
+			&:hover, &:active {
+				background-color: @colorGreenLight;
+				color:#fff;
+			}
+		}
+	}
 }
