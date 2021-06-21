@@ -134,6 +134,7 @@ a{
 	font-size: 48px;
 	margin: 0;
 	text-align: center;
+	line-height: 1.1;
 }
 
 /* General HEADER */
@@ -254,4 +255,120 @@ a{
 
 /* General TABMENU */
 
+.menu {
+	padding: 170px 0 85px 0;
 
+	&__h {
+		margin-bottom: 25px;
+		font-weight: @fontNormal;
+	}
+
+	&__text {
+		width: 50%;
+		text-align: center;
+		margin: 0 auto 50px;
+		font-size: 14px;
+		line-height: 22px;
+		color: @colorGreyTex;
+	}
+
+	&__tabs {
+		margin-bottom: 35px;
+	}
+
+	&__content {
+		padding-left: 0;
+	}
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	padding: 0;
+
+	&__item {
+		@offset: 4px;
+		padding-left: @offset;
+		padding-right: @offset;
+
+		& + & {
+			margin-left: 70px;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 0;
+			border-bottom: 2px solid @colorGreenLight;
+		}
+
+		&:hover::after {
+			width: 100%;
+			transition: width @transT;
+		}
+
+		&.active {
+			border-bottom: 2px solid @colorGreenLight;
+
+			a {
+				color: @colorGreenDeep;
+			}
+		}
+
+	}
+
+	&__link {
+		color: #000;
+		font-weight: @fontSBold;
+	}
+}
+
+.tabs-content {
+
+	&__section {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	&__wrap {
+		padding-left: 0;
+		.row-flex();
+		.xs-block({
+			justify-content: center;
+		})
+	}
+}
+
+.product {
+	.col();
+	.size(3);
+	.size-md(4);
+	.size-sm(6);
+	.size-xs(10);
+	margin-bottom: 20px;
+	text-align: center;
+
+	&__pic {
+		margin-bottom: 24px;
+		width: 100%;
+	}
+
+	&__name {
+		font-size: 16px;
+		line-height: 22px;
+		color: #000;
+		margin: 0;
+		margin-bottom: 8px;
+		font-weight: @fontNormal;
+	}
+
+	&__price {
+		font-size: 16px;
+		font-weight: @fontBold;
+		line-height: 22px;
+		color: @colorGreenDeep;
+	}
+}
