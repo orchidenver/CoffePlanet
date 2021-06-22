@@ -191,6 +191,11 @@ a{
 		font-weight: @fontNormal;
 		font-size: 14px;
 		line-height: 17px;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px #304431, 0 0 3px 5px #5B815D;
+		}
 	}	
 }
 
@@ -228,6 +233,7 @@ a{
 			transition: @transT;
 
 			&:focus {
+				outline: none;
 				box-shadow: 0 0 0 2px #304431, 0 0 3px 5px #5B815D;
 			}
 
@@ -242,6 +248,7 @@ a{
 			transition: @transT;
 
 			&:focus {
+				outline: none;
 				box-shadow: 0 0 0 2px #304431, 0 0 3px 5px #5B815D;
 			}
 
@@ -313,7 +320,9 @@ a{
 			a {
 				color: @colorGreenDeep;
 			}
+
 		}
+		
 
 	}
 
