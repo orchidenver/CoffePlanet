@@ -137,6 +137,14 @@ a{
 	line-height: 1.1;
 }
 
+.clearfix::before,
+.clearfix::after {
+	content:'';
+	display: block;
+	clear: both;
+}
+
+
 /* General HEADER */
 
 .main-header {
@@ -386,47 +394,64 @@ a{
 
 .about {
 	padding: 95px 0 85px 0;
-	display: flex;
-	flex-wrap: wrap;
-	.col();
+
+	&__figure {
+		float: left;
+		padding: 0 20px 35px 0;
+	}
 
 	&__slider {
-		
-		.size(6);
+		padding-top: 15px;
+		display: flex;
+		justify-content: flex-end;
+	}
 
-		&__items {
-	
+	&__text {
+		p:nth-child(1){
+			padding-bottom: 24px;
 		}
-		&__arrow {
-			
+
+		p:nth-child(2){
+			padding-bottom: 87px;
+		}
+
+		p:nth-child(3){
+			padding-bottom: 20px;
 		}
 	}
 
-	&__content {
-		.size(6);
+	&__para {
+		margin: 0;
+		text-align: justify;
+		width: 100%;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 21px;
 	}
 
-	&__footer {
-		.size (12);
-	}
-
-	.content {
-		
-		&__head {
-			.size(12);
-			font-weight: normal;
-			font-size: 48px;
-			line-height: 59px;
-		}
-
-		&__text {
-			&-para1 {
-			font-style: normal;
-			font-weight: normal;
-			font-size: 14px;
-			line-height: 21px;
-			}
-		}
+	&__head {
+		margin: 20px 0 45px 0;
+		font-weight: normal;
+		font-size: 48px;
+		line-height: 59px;
 	}
 }
+.buttons {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		color:#000;
+	}
+
+	&-right {
+		transform: rotate(-180deg);
+	}
+}
+
+
+
 
