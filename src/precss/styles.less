@@ -329,6 +329,9 @@ a{
 				color: @colorGreenDeep;
 			}
 
+			&:hover::after {
+				opacity: 0;
+			}
 		}
 		
 
@@ -437,6 +440,27 @@ a{
 		font-size: 48px;
 		line-height: 59px;
 	}
+
+	&__link {
+		position: relative;
+		color: @colorGreenDeep;
+		
+		&::after {
+			position: absolute;
+			content: '';
+			height: 1px;
+			right: 0;
+			left: 0;
+			top: 23px;
+			background: @colorGreenLight;
+		}
+
+		&:hover::after,
+		&:active::after,
+		&:focus::after {
+			opacity: 0;
+		}
+	}
 }
 .buttons {
 	background-color: transparent;
@@ -444,7 +468,11 @@ a{
 	cursor: pointer;
 
 	&:hover {
-		color:#000;
+		path {
+			fill:none;
+			stroke:black;
+			pointer-events:all;
+		}
 	}
 
 	&-right {
