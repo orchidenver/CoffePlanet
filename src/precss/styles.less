@@ -396,7 +396,7 @@ a{
 /* ABOUT */
 
 .about {
-	padding: 95px 0 85px 0;
+	padding-top: 95px;
 
 	&__figure {
 		float: left;
@@ -466,12 +466,11 @@ a{
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-
-	&:hover {
-		path {
-			fill:none;
-			stroke:black;
-			pointer-events:all;
+	
+	object {
+		display: inline-block;
+		&:hover {
+			filter: brightness(0%);
 		}
 	}
 
@@ -479,6 +478,60 @@ a{
 		transform: rotate(-180deg);
 	}
 }
+
+/* FEATURES */
+
+.features {
+	padding-top: 225px;
+
+	&__item {
+		border-right: thin solid #dddddd;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		.size(3);
+		.col();
+		height: 100%;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	&__head {
+		margin: 0;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 48px;
+		line-height: 59px;
+	}
+
+	&__text {
+		padding-top: 25px;
+		text-align: center;
+		width: 50%;
+		margin: 0 auto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	&__offer {
+		padding-top: 74px;
+		display: flex;
+	}
+	
+	&__subhead {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 22px;
+	}
+}
+
+
 
 
 

@@ -130,10 +130,14 @@
                 </div>
             </div>
             <div class="about__slider">
-                <button class="buttons"><img src="templates/parts/svgo/ico-arrow-left.svg"
-                        alt="button slide to the left"></button>
-                <button class="buttons buttons-right"><img src="templates/parts/svgo/ico-arrow-left.svg"
-                        alt="button slide to the right"></button>
+                <button class="buttons buttons-left"><object type="image/svg+xml"
+                        data="../templates/parts/svgo/ico-arrow-left.svg">
+                        Your browser does not support SVG
+                    </object></button>
+                <button class="buttons buttons-right"><object type="image/svg+xml"
+                        data="../templates/parts/svgo/ico-arrow-left.svg">
+                        Your browser does not support SVG
+                    </object></button>
             </div>
         </div>
         <div class="about__content">
@@ -159,8 +163,35 @@
                 </p>
             </div>
             <a class="about__link" href="#">Book a table in our cozy coffee shop</a>
+
         </div>
     </section>
+    <section id="features" class="features">
+        <h2 class="features__head">Our features</h2>
+        <p class="features__text">
+            Come to make sure The CoffeePlanet at Westchase can actually deliver what we promise — a great coffee shop
+            experience.
+        </p>
+        <div class="features__offer">
+            <div class="features__item">
+                <img class="features__img" src="img/icons/teaicon.jpg" alt="">
+                <h3 class="features__subhead">Coffee and tea</h3>
+            </div>
+            <div class="features__item">
+                <img class="features__img" src="img/icons/sweetsicon.jpg" alt="">
+                <h3 class="features__subhead">Tasty sweets</h3>
+            </div>
+            <div class="features__item">
+                <img class="features__img" src="img/icons/wifiicon.jpg" alt="">
+                <h3 class="features__subhead">Free WiFi</h3>
+            </div>
+            <div class="features__item">
+                <img class="features__img" src="img/icons/sweetsicon.jpg" alt="">
+                <h3 class="features__subhead">Comfortable seats</h3>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 {% include 'parts/_foot.html' %}
