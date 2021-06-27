@@ -531,7 +531,147 @@ a{
 	}
 }
 
+/* VISITORS */
 
+.visitors {
+	padding-top: 225px;
+
+	&__head {
+		padding-bottom: 60px;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 48px;
+		line-height: 59px;
+		margin: 0;
+	}
+
+	&__table {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.table {
+	&__review {
+		padding: 70px 30px;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+		.size(4);
+		.col();
+	}
+
+	&__userpic {
+		margin-bottom: 38px;
+	}
+
+	&__username {
+		margin-bottom: 21px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 22px;
+		color: @colorGreyCon;
+	}
+
+	&__comment {
+		margin-bottom: 32px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 147.1%;
+		color: @colorGreyCon;
+	}
+
+	&__date {
+		font-style: italic;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 147.1%;
+		color: @colorGreyDat;
+	}
+}
+
+/* FOOTER */
+
+.contacts {
+	padding-top: 170px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&__info {
+		padding: 70px 0;
+		.size(4);
+		.col();
+	}
+
+	&__head {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 48px;
+		line-height: 59px;
+		margin-bottom: 60px;
+		margin: 0;
+	}
+
+	&__address {
+		margin-top: 60px;
+		padding: 0;
+	}
+
+	&__item {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 20px;
+
+		&-time {
+			background: url('../templates/parts/svgo/timeicon.svg') no-repeat left top;
+			padding-left: 30px;
+			margin-bottom: 18px;
+		}
+
+		&-street {
+			background: url('../templates/parts/svgo/ico-adress.svg') no-repeat left top;
+			padding-left: 30px;
+			margin-bottom: 18px;
+		}
+
+		&-tel {
+			background: url('../templates/parts/svgo/phoneicon.svg') no-repeat left top;
+			padding-left: 30px;
+			margin-bottom: 18px;
+		}
+
+		&-mail {
+			background: url('../templates/parts/svgo/timeicon.svg') no-repeat left top;
+			padding-left: 30px;
+		}
+	}
+
+	&__map {
+		.size(8);
+		.col;
+	}
+
+	&__copyrights {
+		margin: 50px auto 36px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		color: @colorGreyTex;
+	}
+
+	&__map {
+		
+	}
+
+	&__link {
+		display: block;
+	}
+}	
 
 
 
