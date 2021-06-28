@@ -8,16 +8,46 @@
             <li class="contacts__item-mail">coffeeplanet@mail.com</li>
         </ul>
         <div class="contacts__socmed">
-
+            <a class="contacts__link" href="#">{% include 'parts/svgo/fb-icon.svg' %}</a>
+            <a class="contacts__link" href="#">{% include 'parts/svgo/ico-instagram.svg' %}</a>
         </div>
     </div>
     <div class="contacts__map">
-        <a class="contacts__link"
+        <a class="contacts__link" target="_blank"
             href="https://www.google.com/maps/place/Coffee+Planet+Ballston+Spa/@42.581315,-74.1555308,6.12z/data=!3m1!5s0x89de40a3cf9f3087:0x84281064aba42821!4m9!1m2!2m1!1scoffee+planet+coffeeshop!3m5!1s0x0:0xbcc1e518bd30b474!8m2!3d43.0037723!4d-73.8486171!15sChhjb2ZmZWUgcGxhbmV0IGNvZmZlZXNob3AiA4gBAVoaIhhjb2ZmZWUgcGxhbmV0IGNvZmZlZXNob3CSAQtjb2ZmZWVfc2hvcJoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSNWJDMHRZa2xuRUFF"><img
-                src="/src/img/map.jpg" alt="map"></a>
+                src="/img/map.jpg" alt="map"></a>
     </div>
     <p class="contacts__copyrights">Copyright 2019 CoffeePlanet</p>
 </footer>
+<div class="modal-overlay d-n">
+    <form class="modal modal-form" action="#">
+        <h2 class="modal-form__head">Book a table</h2>
+        <p class="modal-form__text">Leave your phone number and we will contact you</p>
+        <div class="modal-form__name">
+            <label>Name<br>
+                <input type="text" size="20" name="name">
+            </label>
+        </div>
+        <div class="modal-form__phone">
+            <label>Phone<br>
+                <input type="phone" size="20" name="phone">
+            </label>
+        </div>
+        <button class="modal-form__button" type="submit">Send</button>
+    </form>
+    <div class="modal modal-video">
+        <iframe width="100%" height="430" src="https://www.youtube.com/embed/TjiwprlOiJ0" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <div class="modal modal-alert">
+        <p class="modal-alert__text">Thank you!</p>
+        <p class="modal-alert__comment">We will contact you as soon as possible</p>
+    </div>
+    <button aria-label="press to close the window" class="modal-overlay__close"></button>
+</div>
+<script src="./js/js.js"></script>
 </body>
 
 </html>

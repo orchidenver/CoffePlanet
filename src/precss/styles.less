@@ -620,6 +620,27 @@ a{
 		padding: 0;
 	}
 
+	&__link {
+		display: block;
+		margin-top: 30px;
+
+		& + & {
+			margin-left: 10px;
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			path {
+				fill: @colorGreenLight;
+			}
+		}
+	}
+
+	&__socmed {
+		display: flex;
+	}
+
 	&__item {
 		font-style: normal;
 		font-weight: normal;
@@ -673,6 +694,170 @@ a{
 	}
 }	
 
+/* MODAL-OVERLAY */
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+
+	&__close {
+		padding: 0;
+		position: absolute;
+		top: 3%;
+		right: 10%;
+		.btn-reset();
+		@size: 25px;
+		width: @size;
+		height: @size;
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			border-bottom: 2px solid #fff;
+			top: 50%;
+			margin-top: -1px;
+			width: 100%;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&.active {
+		display: block;
+
+	}
+}
+
+.modal {
+	display: none;
+	padding: 10px;
+	width: 97%;
+	min-height: 50%;
+	max-width: 964px;
+	position: absolute;
+	background-color: #fff;
+	border-radius: 4px;
+	max-height: 70%;
+	overflow-y: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	&.active {
+		display: block;
+	}
+}
+
+.modal-form {
+	box-sizing: border-box;
+
+	&__head {
+		text-align: center;
+		margin-top: 60px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 48px;
+		line-height: 59px;
+	}
+
+	&__text {
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 21px;
+		color: @colorGreyTex;
+	}
+
+	&__name {
+		margin-top: 30px;
+		text-align: center;
+	}
+
+	&__phone {
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	&__button {
+		display: block;
+		.btn-reset();
+		height: 56px;
+		font-weight: @fontSBold;
+		padding: 0 85px;
+		border-radius: 50px;
+		vertical-align: bottom;
+		background-color: @colorGreenDeep;
+		box-shadow: 0px 7px 21px rgba(55, 125, 60, 0.3);
+		color: #fff;
+		transition: @transT;	
+		margin: 50px auto 90px;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px #304431, 0 0 3px 5px #5B815D;
+		}
+
+		&:hover, &:active {
+			background-color: @colorGreenLight;
+		}
+	}
+
+	input {
+		width: 100%;
+		border: 0;
+		border-bottom: 1px solid #000;
+	}
+
+	label {
+		display: block;
+		text-align: left;
+		width: 40%;
+		margin: 0 auto;
+	}
+}
+
+.modal-video {
+	padding: 55px 90px;
+}
+
+.modal-alert {
+	background-image: url(../img/icons/ico-ok.jpg);
+	background-size: 60px;
+	background-repeat: no-repeat;
+	background-position: right 50% bottom 70%;
+
+	&__text {
+		margin: 0;
+		margin-top: 230px;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 48px;
+		line-height: 59px;
+	}
+
+	&__comment {
+		margin-top: 20px;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
 
 
 
