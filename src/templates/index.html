@@ -123,15 +123,17 @@
         </ul>
     </section>
     <section id="about" class="about clearfix">
-        <div class="about__figure">
-            <div class="about__items">
-                <div class="about__items-pic"><img src="img/slider/coffeshop.jpg" alt="photo of coffee shop"></div>
-                <div class="about__items-pic d-n"><img src="img/slider/coffemugs.jpg" alt="photo of coffee mugs">
+        <div class="about__slider slider">
+            <div class="slider__slides">
+                <div class="slider__slide"><img src="img/slider/coffeshop.jpg" alt="photo of coffee shop"></div>
+                <div class="slider__slide d-n"><img src="img/slider/coffemugs.jpg" alt="photo of coffee mugs">
                 </div>
             </div>
-            <div class="about__slider">
-                <button class="buttons buttons-left" href="#">{% include 'parts/svgo/ico-arrow-right.svg' %}</button>
-                <button class="buttons buttons-right" href="#">{% include 'parts/svgo/ico-arrow-right.svg' %}</button>
+            <div class="slider__buttons">
+                <button class="slider__button button button-left" href="#">{% include 'parts/svgo/ico-arrow-right.svg'
+                    %}</button>
+                <button class="slider__button button button-right" href="#">{% include 'parts/svgo/ico-arrow-right.svg'
+                    %}</button>
             </div>
         </div>
         <div class="about__content">
@@ -189,31 +191,33 @@
         <h2 class="visitors__head">
             Our happy visitors say:
         </h2>
-        <div class="visitors__table">
-            <div class="table__review">
-                <img class="table__userpic" src="img/visitors/img-feedback-1.jpg" alt="user feedback">
-                <p class="table__username">Dennis Simpson</p>
-                <p class="table__comment">Lorem ipsum dolor sit amet, conse tetur adipisicing elit, sed do eiusmod
+        <div class="visitors__board board">
+            <article class="board__review">
+                <img class="board__userpic" src="img/visitors/img-feedback-1.jpg" alt="user feedback">
+                <h3 class="board__username">Dennis Simpson</h3>
+                <p class="board__comment">Lorem ipsum dolor sit amet, conse tetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation
+                </p>
+                <time class="board__date" datetime="2019-04-30">30.04.2019</time>
+            </article>
+            <article class="board__review">
+                <img class="board__userpic" src="img/visitors/img-feedback-2.jpg" alt="user feedback">
+                <h3 class="board__username">Andrew Smith</h3>
+                <p class="board__comment">Lorem ipsum dolor sit amet, conse tetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation
+                </p>
+                <time class="board__date" datetime="2018-08-24">24.08.2018</time>
+            </article>
+            <article class="board__review">
+                <img class="board__userpic" src="img/visitors/img-feedback-3.jpg" alt="user feedback">
+                <h3 class="board__username">George Cuper</h3>
+                <p class="board__comment">Lorem ipsum dolor sit amet, conse tetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation </p>
-                <p class="table__date">30.04.2019</p>
-            </div>
-            <div class="table__review">
-                <img class="table__userpic" src="img/visitors/img-feedback-2.jpg" alt="user feedback">
-                <p class="table__username">Andrew Smith</p>
-                <p class="table__comment">Lorem ipsum dolor sit amet, conse tetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation </p>
-                <p class="table__date">24.08.2018</p>
-            </div>
-            <div class="table__review">
-                <img class="table__userpic" src="img/visitors/img-feedback-3.jpg" alt="user feedback">
-                <p class="table__username">George Cuper</p>
-                <p class="table__comment">Lorem ipsum dolor sit amet, conse tetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation </p>
-                <p class="table__date">12.05.2018</p>
-            </div>
+                <time class="board__date" datetime="2018-05-12">12.05.2018</time>
+            </article>
         </div>
     </aside>
 </main>

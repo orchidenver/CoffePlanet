@@ -398,15 +398,9 @@ a{
 .about {
 	padding-top: 95px;
 
-	&__figure {
+	&__slider  {
 		float: left;
 		padding: 0 20px 35px 0;
-	}
-
-	&__slider {
-		padding-top: 15px;
-		display: flex;
-		justify-content: flex-end;
 	}
 
 	&__text {
@@ -462,22 +456,38 @@ a{
 		}
 	}
 }
-.buttons {
+
+.slider {
+	&__buttons {
+		padding-top: 15px;
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.button {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+	width: 20px;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	fill: @colorGreenDeep;
 	
-	object {
-		display: inline-block;
-		&:hover {
-			filter: brightness(0%);
+	&:hover {
+		path {
+			fill: black;
 		}
 	}
 
-	&-right {
+	&-left {
 		transform: rotate(-180deg);
+		margin-right: 15px;
 	}
+
 }
+
 
 /* FEATURES */
 
@@ -546,13 +556,13 @@ a{
 		margin: 0;
 	}
 
-	&__table {
+	&__board {
 		display: flex;
 		justify-content: space-between;
 	}
 }
 
-.table {
+.board {
 	&__review {
 		padding: 70px 30px;
 		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
@@ -663,17 +673,25 @@ a{
 			background: url('../templates/parts/svgo/phoneicon.svg') no-repeat left top;
 			padding-left: 30px;
 			margin-bottom: 18px;
+
+			a {
+				color: black;
+			}
 		}
 
 		&-mail {
-			background: url('../templates/parts/svgo/timeicon.svg') no-repeat left top;
+			background: url('../templates/parts/svgo/mailicon.svg') no-repeat left top;
 			padding-left: 30px;
+
+			a {
+				color: black;
+			}
 		}
 	}
 
 	&__map {
 		.size(8);
-		.col;
+		.col();
 	}
 
 	&__copyrights {
@@ -683,10 +701,6 @@ a{
 		font-size: 14px;
 		line-height: 17px;
 		color: @colorGreyTex;
-	}
-
-	&__map {
-		
 	}
 
 	&__link {
@@ -762,6 +776,7 @@ a{
 
 .modal-form {
 	box-sizing: border-box;
+	max-height: 95vh;
 
 	&__head {
 		text-align: center;
@@ -798,7 +813,6 @@ a{
 		font-weight: @fontSBold;
 		padding: 0 85px;
 		border-radius: 50px;
-		vertical-align: bottom;
 		background-color: @colorGreenDeep;
 		box-shadow: 0px 7px 21px rgba(55, 125, 60, 0.3);
 		color: #fff;
@@ -831,6 +845,7 @@ a{
 
 .modal-video {
 	padding: 55px 90px;
+	max-height: 95vh;
 }
 
 .modal-alert {
@@ -838,6 +853,7 @@ a{
 	background-size: 60px;
 	background-repeat: no-repeat;
 	background-position: right 50% bottom 70%;
+	max-height: 95vh;
 
 	&__text {
 		margin: 0;
