@@ -78,3 +78,21 @@ window.addEventListener('keydown', e => {
         mobileMenuClose();
     }
 });
+
+let tabLinks = document.querySelectorAll('.tabs__link');
+function tabsToggle(e) {
+    e.preventDefault();
+    let anchor = e.target.getAttribute('href');
+    let goal = document.querySelector(anchor);
+
+    let actives = document.querySelectorAll('.tabs__item.active, .tabs-content__section.active');
+    actives.forEach(active => {
+        active.classList.remove('active');
+    });
+    e.target.parentElement.classList.add('active');
+    goal.classList.add('active');
+}
+
+tabLinks.forEach(tabLink => {
+    tabLink.addEventListener('click', tabsToggle);
+});
