@@ -8,7 +8,7 @@
 html,
 body{
 	box-sizing: border-box;
-	scroll-behavior:smooth;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -233,6 +233,15 @@ a{
 		padding-top: 30px;
 	});
 
+	&.scrolled {
+		position: fixed;
+		top: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: #fff;
+		z-index: 99999;
+	}
+
 	&__wrap {
 		display: flex;
 		justify-content: space-between;
@@ -341,6 +350,7 @@ a{
 	background-size: auto;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	.media-max(520px, {
 		padding-top: 120px;
 		padding-bottom: 165px;

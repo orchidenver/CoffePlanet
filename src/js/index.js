@@ -96,3 +96,28 @@ function tabsToggle(e) {
 tabLinks.forEach(tabLink => {
     tabLink.addEventListener('click', tabsToggle);
 });
+
+let header = document.querySelector('.main-header');
+function stickyHeader() {
+    if (window.scrollY > 500) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}
+
+function throttle(func, time) {
+    let isThrottled = false;
+    return function () {
+        if (isThrottled) return;
+        let ctx = this;
+        let args = arguments;
+        func.apply(ctx, args);
+        isThrottled = true;
+        setTimeout(() => {
+            isThrottled = false;
+        }, time)
+    }
+}
+
+window.addEventListener('scroll', throttle(stickyHeader, 300));
