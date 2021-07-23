@@ -34,10 +34,10 @@ headerNav.addEventListener('click', e => {
     }
 })
 
-let modalBtns = document.querySelector('.btn-modal');
+let modalBtns = document.querySelectorAll('.btn-modal');
 let modalOverlay = document.querySelector('.modal-overlay');
-let modalModals = document.querySelector('.modal');
-let modalCloser = document.querySelector('modal-overlay__close');
+let modalModals = document.querySelectorAll('.modal');
+let modalCloser = document.querySelector('.modal-overlay__close');
 
 function modalOpen(e) {
     e.preventDefault();
@@ -51,17 +51,17 @@ function modalOpen(e) {
     document.body.classList.add('ov-h');
 };
 
-function modalClose(e) {
+function modalClose() {
     let actives = document.querySelectorAll('.modal-overlay.active, .modal.active');
     actives.forEach(active => {
         active.classList.remove('active');
-        active.classList.remove('animate__animated');
+        //active.classList.remove('animate__animated');
     });
     document.body.classList.remove('ov-h');
 };
 
-modalBtns.forEach(modalBtns => {
-    modalBtns.addEventListener('click', modalOpen);
+modalBtns.forEach(modalBtn => {
+    modalBtn.addEventListener('click', modalOpen);
 });
 
 modalCloser.addEventListener('click', modalClose);
@@ -99,7 +99,7 @@ tabLinks.forEach(tabLink => {
 
 let header = document.querySelector('.main-header');
 function stickyHeader() {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 300) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
