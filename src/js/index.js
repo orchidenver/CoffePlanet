@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'slick-carousel';
+import createFocusTrap from 'focus-trap';
 
 $('.slider__slides').slick({
     autoplay: true,
@@ -10,12 +11,17 @@ $('.slider__slides').slick({
 
 let btnMobile = document.querySelector('.btn-mobile');
 let headerNav = document.querySelector('.main-header__nav');
+//let mobileMenuTrap = createFocusTrap('.main-header__nav');
+
 function mobileMenuOpen() {
     btnMobile.classList.add('is-open');
     headerNav.classList.add('is-open');
     document.body.classList.add('ov-h');
+    //    headerNav.querySelector('a').focus()
+    mobileMenuTrap.activate();
 }
 function mobileMenuClose() {
+    mobileMenuTrap.deactivate();
     btnMobile.classList.remove('is-open');
     headerNav.classList.remove('is-open');
     document.body.classList.remove('ov-h');
@@ -38,6 +44,9 @@ let modalBtns = document.querySelectorAll('.btn-modal');
 let modalOverlay = document.querySelector('.modal-overlay');
 let modalModals = document.querySelectorAll('.modal');
 let modalCloser = document.querySelector('.modal-overlay__close');
+/*let modalTrap = createFocusTrap(modalOverlay, {
+    initialFocus: '.modal.active'
+})*/
 
 function modalOpen(e) {
     e.preventDefault();
@@ -48,15 +57,19 @@ function modalOpen(e) {
     modalOverlay.classList.add('animate__animated');
     goal.classList.add('active');
     goal.classList.add('animate__animated');
+    goal.setAttribute('tabindex', 0);
     document.body.classList.add('ov-h');
+    //modalTrap.activate();
 };
 
 function modalClose() {
     let actives = document.querySelectorAll('.modal-overlay.active, .modal.active');
     actives.forEach(active => {
         active.classList.remove('active');
-        //active.classList.remove('animate__animated');
+        active.classList.remove('animate__animated');
+        active.removeAttribute('tabindex', 0)
     });
+    //modalTrap.deactivate();
     document.body.classList.remove('ov-h');
 };
 
@@ -88,9 +101,12 @@ function tabsToggle(e) {
     let actives = document.querySelectorAll('.tabs__item.active, .tabs-content__section.active');
     actives.forEach(active => {
         active.classList.remove('active');
+        active.removeAttribute('tabindex')
     });
     e.target.parentElement.classList.add('active');
     goal.classList.add('active');
+    goal.setAttribute('tabindex', 0)
+    goal.focus();
 }
 
 tabLinks.forEach(tabLink => {
@@ -121,3 +137,10 @@ function throttle(func, time) {
 }
 
 window.addEventListener('scroll', throttle(stickyHeader, 300));
+
+$('.visitors__board.mobile').slick({
+    autoplay: true,
+    autoplaySpeed: 5000,
+    prevArrow: '.arrow.left',
+    nextArrow: '.arrow.right',
+});
