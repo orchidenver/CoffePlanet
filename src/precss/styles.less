@@ -239,7 +239,7 @@ a{
 		padding-top: 10px;
 		padding-bottom: 10px;
 		background-color: #fff;
-		z-index: 99999;
+		z-index: 100;
 	}
 
 	&__wrap {
@@ -364,7 +364,7 @@ a{
 		margin-bottom: 55px;
 		line-height: 1.2;
 		.media-max(830px, {
-			font-size: 50px;
+			font-size: 53px;
 			.size(8);
 			margin-bottom: 25px;
 		});
@@ -810,6 +810,49 @@ a{
 			display: block;
 		});
 	}
+
+	.arrow {
+		cursor: pointer;
+		position: absolute;
+		top:575%;
+		width: 70px;
+		height: 90px;
+		border: none;
+		background-color: transparent;
+	}
+	  
+	.left {
+		left: -2%;
+	}
+	  
+	.right {
+		right: -2%;
+	}
+	  
+	.left:hover polyline,
+	.left:focus polyline {
+		stroke-width: 3;
+	}
+	  
+	.left:active polyline {
+		stroke-width: 6;
+		transition: all 100ms ease-in-out;
+	}
+	  
+	.right:hover polyline,
+	.right:focus polyline {
+		stroke-width: 3;
+	}
+	  
+	.right:active polyline {
+		stroke-width: 6;
+		transition: all 100ms ease-in-out;
+	}
+	  
+	polyline {
+		transition: all 250ms ease-in-out;
+		stroke: @colorGreenDeep;
+	}
 }
 
 .board {
@@ -911,47 +954,6 @@ a{
 	  
 	svg {
 		padding: 5px;
-	}
-	  
-	.arrow {
-		cursor: pointer;
-		position: absolute;
-		top:40%;
-		width: 70px;
-		height: 90px;
-	}
-	  
-	.left {
-		left: -2%;
-	}
-	  
-	.right {
-		right: -2%;
-	}
-	  
-	.left:hover polyline,
-	.left:focus polyline {
-		stroke-width: 3;
-	}
-	  
-	.left:active polyline {
-		stroke-width: 6;
-		transition: all 100ms ease-in-out;
-	}
-	  
-	.right:hover polyline,
-	.right:focus polyline {
-		stroke-width: 3;
-	}
-	  
-	.right:active polyline {
-		stroke-width: 6;
-		transition: all 100ms ease-in-out;
-	}
-	  
-	polyline {
-		transition: all 250ms ease-in-out;
-		stroke: @colorGreenDeep;
 	}
 }
 
@@ -1116,6 +1118,7 @@ a{
 	left: 0;
 	right: 0;
 	background-color: rgba(0,0,0,0.7);
+	z-index: 101;
 
 	&__close {
 		padding: 0;
