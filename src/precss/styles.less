@@ -351,17 +351,17 @@ a{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	display: flex;
 	.media-max(520px, {
 		padding-top: 120px;
 		padding-bottom: 165px;
 	});
 
 	&__text {
+		align-items: center;
 		font-size: 6.25vw;
 		line-height: 110px;
 		.size(7);
-		margin: 0;
-		margin-bottom: 55px;
 		line-height: 1.2;
 		.media-max(830px, {
 			font-size: 53px;
@@ -803,6 +803,10 @@ a{
 		});
 	}
 
+	&__slider {
+		position: relative;
+	}
+
 	&__board {
 		display: flex;
 		justify-content: space-between;
@@ -814,11 +818,16 @@ a{
 	.arrow {
 		cursor: pointer;
 		position: absolute;
-		top:575%;
+		top:50%;
+		transform: translateY(-50%);
 		width: 70px;
 		height: 90px;
 		border: none;
 		background-color: transparent;
+		display: none;
+		.media-max(768px, {
+			display: block;
+		})
 	}
 	  
 	.left {
@@ -1178,7 +1187,7 @@ a{
 
 .modal-form {
 	box-sizing: border-box;
-	max-height: 95vh;
+	max-height: 85vh;
 
 	&__head {
 		text-align: center;
@@ -1247,7 +1256,7 @@ a{
 
 .modal-video {
 	padding: 55px 90px;
-	max-height: 95vh;
+	max-height: 85vh;
 }
 
 .modal-alert {

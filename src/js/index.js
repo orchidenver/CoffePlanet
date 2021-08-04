@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import 'slick-carousel';
-import createFocusTrap from 'focus-trap';
+import * as FocusTrap from 'focus-trap';
 
 $('.slider__slides').slick({
     autoplay: true,
@@ -11,17 +11,17 @@ $('.slider__slides').slick({
 
 let btnMobile = document.querySelector('.btn-mobile');
 let headerNav = document.querySelector('.main-header__nav');
-//let mobileMenuTrap = createFocusTrap('.main-header__nav');
+let mobileMenuTrap = FocusTrap.createFocusTrap('.main-header__nav');
 
 function mobileMenuOpen() {
     btnMobile.classList.add('is-open');
     headerNav.classList.add('is-open');
     document.body.classList.add('ov-h');
-    //    headerNav.querySelector('a').focus()
-    //mobileMenuTrap.activate();
+    headerNav.querySelector('a').focus()
+    mobileMenuTrap.activate();
 }
 function mobileMenuClose() {
-    //mobileMenuTrap.deactivate();
+    mobileMenuTrap.deactivate();
     btnMobile.classList.remove('is-open');
     headerNav.classList.remove('is-open');
     document.body.classList.remove('ov-h');
@@ -44,9 +44,9 @@ let modalBtns = document.querySelectorAll('.btn-modal');
 let modalOverlay = document.querySelector('.modal-overlay');
 let modalModals = document.querySelectorAll('.modal');
 let modalCloser = document.querySelector('.modal-overlay__close');
-/*let modalTrap = createFocusTrap(modalOverlay, {
+let modalTrap = FocusTrap.createFocusTrap(modalOverlay, {
     initialFocus: '.modal.active'
-})*/
+})
 
 function modalOpen(e) {
     e.preventDefault();
@@ -59,7 +59,7 @@ function modalOpen(e) {
     goal.classList.add('animate__animated');
     goal.setAttribute('tabindex', 0);
     document.body.classList.add('ov-h');
-    //modalTrap.activate();
+    modalTrap.activate();
 };
 
 function modalClose() {
@@ -69,7 +69,7 @@ function modalClose() {
         active.classList.remove('animate__animated');
         active.removeAttribute('tabindex', 0)
     });
-    //modalTrap.deactivate();
+    modalTrap.deactivate();
     document.body.classList.remove('ov-h');
 };
 
@@ -140,14 +140,22 @@ window.addEventListener('scroll', throttle(stickyHeader, 300));
 
 let visitorsBoard = document.querySelector('.visitors__board')
 
-$('.visitors__board.mobile').slick({
+$('.visitors__board').slick({
     autoplay: true,
     autoplaySpeed: 5000,
     prevArrow: '.arrow.left',
     nextArrow: '.arrow.right',
+    slidesToShow: 1,
+    mobileFirst: true,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: 'unslick'
+        }
+    ]
 });
 
-function reSize() {
+/*function reSize() {
     if (window.innerWidth < 750) {
         visitorsBoard.classList.add('mobile')
     }
@@ -156,4 +164,4 @@ function reSize() {
     }
 }
 
-window.addEventListener('resize', throttle(reSize, 300));
+window.addEventListener('resize', throttle(reSize, 300));*/
