@@ -115,7 +115,7 @@ tabLinks.forEach(tabLink => {
 
 let header = document.querySelector('.main-header');
 function stickyHeader() {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
